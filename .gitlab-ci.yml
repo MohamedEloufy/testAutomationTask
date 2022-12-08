@@ -8,9 +8,9 @@
 
 \f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec2 \
-demo_job_1:\
-     tags:\
-       - ci\
-     script:\
+demo_job_1:
+     tags:
+       - ci
+     script:
        - echo Hello World\
 }
