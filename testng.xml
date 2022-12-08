@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation Task" parallel="tests" thread-count="1">
-
+<suite name="Automation Task">
+    <listeners>
+        <listener class-name="Listeners.TestJiraListener"/>
+    </listeners>
 
     <test name="FirstTestCase">
         <parameter name="browser" value="chrome"/>
         <parameter name="url" value="https://petclincqpros.herokuapp.com/"/>
         <classes>
             <class name="Tests.TestThePresenceOfImageInHomePage"/>
-            <class name="Tests.PrintVeterinariansList"/>
-            <class name="Tests.PrintOwnerList"/>
-            <class name="Tests.AddOwnerTest"/>
+            <class name="Tests.PrintVeterinariansListTest"/>
+            <!--class name="Tests.PrintOwnerListTest"/>
+            <class name="Tests.AddOwnerTest"/>-->
         </classes>
     </test>
 

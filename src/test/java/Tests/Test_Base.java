@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.manager.SeleniumManager;
 import org.testng.annotations.*;
 
 import java.time.Duration;
@@ -23,21 +24,15 @@ public class Test_Base {
     @Severity(SeverityLevel.BLOCKER)
     public void startDriver(@Optional("chrome") String browserName, String url) {
         if (browserName.equalsIgnoreCase("chrome")) {
-
-            // 0pen driver by using webDriver manager
-            WebDriverManager.chromedriver().setup();
             driver.set(new ChromeDriver());
 
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
-
-            WebDriverManager.firefoxdriver().setup();
             driver.set(new FirefoxDriver());
 
 
         } else if (browserName.equalsIgnoreCase("chrome-headless")) {
 
-            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
             options.addArguments("window-size=1920,1080");

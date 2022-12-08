@@ -15,7 +15,7 @@ public class Home_Page extends Page_Base {
     public WebElement image;
 
     @FindBy(xpath = "//a[@title='find owners']")
-    WebElement findOwners;
+    public WebElement findOwners;
 
 
     @FindBy(xpath = "//a[@title='veterinarians']")

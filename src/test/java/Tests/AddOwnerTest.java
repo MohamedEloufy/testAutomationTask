@@ -1,14 +1,10 @@
 package Tests;
 
 import Pages.*;
+import Util.jiraPolicy;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddOwnerTest extends Test_Base {
     Home_Page homePage;
@@ -30,6 +26,7 @@ public class AddOwnerTest extends Test_Base {
     String petName=faker.animal().name();
     String birthday=sdf.format(faker.date().birthday());
 
+    @jiraPolicy(logTicketReady = true)
     @Test
     public void AddOwnersTest() throws InterruptedException {
         homePage = new Home_Page(getDriver());

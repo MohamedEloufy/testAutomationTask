@@ -2,21 +2,24 @@ package Tests;
 
 import Pages.Home_Page;
 import Pages.Owners;
+import Util.jiraPolicy;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import utilities.ScreenRecordUtil;
 
-public class PrintOwnerList extends Test_Base{
+public class PrintOwnerListTest extends Test_Base{
 
     Home_Page homePage;
     Owners owners;
 
+    @jiraPolicy(logTicketReady = true)
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    public void openFindOwner()
-    {
+    public void openFindOwner() throws Exception {
+        ScreenRecordUtil.startRecord("openFindOwner");
         homePage=new Home_Page(getDriver());
         homePage.openFindOwners();
         owners=new Owners(getDriver());
@@ -36,5 +39,6 @@ public class PrintOwnerList extends Test_Base{
         }
 
 
+        ScreenRecordUtil.stopRecord();
     }
 }
