@@ -5,14 +5,15 @@
         <listener class-name="Listeners.TestJiraListener"/>
     </listeners>
 
+
+
     <test name="FirstTestCase">
         <parameter name="browser" value="chrome"/>
-        <parameter name="url" value="https://petclincqpros.herokuapp.com/"/>
+        <parameter name="url" value="https://subscribe.stctv.com/"/>
         <classes>
-            <class name="Tests.TestThePresenceOfImageInHomePage"/>
-            <class name="Tests.PrintVeterinariansListTest"/>
-            <!--class name="Tests.PrintOwnerListTest"/>
-            <class name="Tests.AddOwnerTest"/>-->
+            <class name="Tests.ValidateSubscriptionPackagesForKSACountryTest"/>
+            <class name="Tests.ValidateSubscriptionPackageForBahrainCountryTest"/>
+            <class name="Tests.ValidateSubscriptionPackageForKuwaitCountryTest"/>
         </classes>
     </test>
 
